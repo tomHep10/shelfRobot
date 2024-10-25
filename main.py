@@ -1,4 +1,11 @@
 import pygame
+from robot import Robot
+from utils import scale_image
+
+robot = scale_image(pygame.image.load(r"C:\Users\tomhu\Desktop\Code\GitHub\shelfRobot\Robot.png"), 8)
+robot_rect = robot.get_rect()
+
+robotObj = Robot(robot_rect)
 
 # Initialize Pygame
 pygame.init()
@@ -24,7 +31,8 @@ while running:
     # Game logic (update game state, etc.)
 
     # Drawing (render graphics)
-
+    screen.fill((255, 255, 255))
+    robotObj.draw(screen, robot)
     # Update the display
     pygame.display.flip()
 
